@@ -1,0 +1,17 @@
+/* .header{
+    display: flex;
+} */
+.conteiner-top-header{
+height: 80px;
+/* width: 1440px; */
+left: 0px;
+top: 0px;
+border-radius: 0px;
+text-align: center;
+display: flex;
+justify-content: space-between;
+}
+
+.image-header{
+    width: 100%;
+}
