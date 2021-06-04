@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactComponent as ArrowRight } from "./images/arrow-right.svg";
 
 export default function FiltrosDeProductos() {
   return (
@@ -10,6 +11,7 @@ export default function FiltrosDeProductos() {
         <button>Lowest price</button>
         <button>Highest price</button>
       </div>
+      <ArrowRight />
     </div>
   );
 }

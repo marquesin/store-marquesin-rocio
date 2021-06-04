@@ -1,12 +1,10 @@
 import "./App.css";
-import Header from "./Componentes/Header.js";
-import FiltrosDeProductos from "./Componentes/FiltrosDeProductos";
+import Container from "./Conteiner.js";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <FiltrosDeProductos />
+      <Container />
     </div>
   );
 }

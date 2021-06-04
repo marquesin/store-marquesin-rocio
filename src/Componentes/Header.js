@@ -1,6 +1,7 @@
 import "./componentes.css";
 import React from "react";
 import { ReactComponent as IconHeader } from "./images/logo.svg";
+import { ReactComponent as Coin } from "./images/coin.svg";
 
 import imageHeader from "./images/header.png";
 export default function Header() {
@@ -10,7 +11,10 @@ export default function Header() {
         <div>
           <IconHeader />
         </div>
-        <div className="usuarioYMonedas">request con nombre y moneditas</div>
+        <div className="usuarioYMonedas">
+          request con nombre y moneditas
+          <Coin />
+        </div>
       </div>
       <div className="conteiner-botton-header">
         <img src={imageHeader} alt={"imageHeader"} className="image-header" />
