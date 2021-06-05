@@ -30,16 +30,16 @@ function App() {
         return console.log(resultado);
       })
       .catch((e) => alert("error: " + e));
-  //   fetch(
-  //     "https://private-anon-c923f3fb16-aerolabchallenge.apiary-mock.com/user/poin/amount",
-  //     headers
-  //   )
-  //     .then((response) => response.json(response))
-  //     .then((resultado) => {
-  //       console.log(resultado);
-  //     })
-  //     .catch((e) => alert("Error: " + e));
-  // }, []);
+    //   fetch(
+    //     "https://private-anon-c923f3fb16-aerolabchallenge.apiary-mock.com/user/poin/amount",
+    //     headers
+    //   )
+    //     .then((response) => response.json(response))
+    //     .then((resultado) => {
+    //       console.log(resultado);
+    //     })
+    //     .catch((e) => alert("Error: " + e));
+  }, []);
 
   return (
     <div className="App">
