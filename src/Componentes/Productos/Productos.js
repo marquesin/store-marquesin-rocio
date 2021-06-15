@@ -1,6 +1,6 @@
-import { ReactComponent as BuyBlue } from "./images/buy-blue.svg";
-import { ReactComponent as BuyWhite } from "./images/buy-white.svg";
-import { ReactComponent as Coin } from "./images/coin.svg";
+import { ReactComponent as BuyBlue } from "./images/Icons/buy-blue.svg";
+import { ReactComponent as BuyWhite } from "./images/Icons/buy-white.svg";
+import { ReactComponent as Coin } from "./images/Icons/coin.svg";
 
 import React from "react";
 

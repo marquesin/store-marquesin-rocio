@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { AppContext } from "../AppContext";
+import { AppContext } from "../Context/AppContext";
 
 export default function Api() {
   const { userYPoint, setUserYPoint } = useContext(AppContext);

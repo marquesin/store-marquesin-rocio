@@ -3,7 +3,7 @@ import React from "react";
 import { ReactComponent as IconHeader } from "./images/logo.svg";
 import { ReactComponent as Coin } from "./images/coin.svg";
 import { useContext } from "react";
-import { AppContext } from "../AppContext";
+import { AppContext } from "../Context/AppContext";
 
 import imageHeader from "./images/header.png";
 export default function Header() {

@@ -1,6 +1,6 @@
 import "./index.css";
-import Container from "./Conteiner.js";
-import { AppProvider } from "./AppContext.jsx";
+import Container from "./Conteiner/Conteiner.js";
+import { AppProvider } from "./Context/AppContext.jsx";
 
 function App() {
   return (
