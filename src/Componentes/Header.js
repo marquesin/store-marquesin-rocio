@@ -8,6 +8,8 @@ import { AppContext } from "../AppContext";
 import imageHeader from "./images/header.png";
 export default function Header() {
   const { userYPoint, setUserYPoint } = useContext(AppContext);
+  // const { newPoints, setNewPoint } = useContext(AppContext);
+
   return (
     <div className="header">
       <div className="conteiner-top-header">
