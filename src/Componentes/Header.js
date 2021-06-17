@@ -7,8 +7,7 @@ import { AppContext } from "../Context/AppContext";
 
 import imageHeader from "./images/header.png";
 export default function Header() {
-  const { userYPoint, setUserYPoint } = useContext(AppContext);
-  // const { newPoints, setNewPoint } = useContext(AppContext);
+  const { userYPoint } = useContext(AppContext);
 
   return (
     <div className="header">
@@ -17,9 +16,9 @@ export default function Header() {
           <IconHeader />
         </div>
         <div className="usuarioYMonedas">
-          <p className="userName">{userYPoint.name}</p>
+          <p className="userName">{userYPoint?.name}</p>
           <div className="monedaMasPuntos">
-            {userYPoint.points}
+            {userYPoint?.points}
             <div className="moneda">
               <Coin />
             </div>

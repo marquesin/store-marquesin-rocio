@@ -4,10 +4,11 @@ export const AppContext = createContext();
 
 export const AppProvider = (props) => {
     const [userYPoint, setUserYPoint]= useState([]);
-    // const [newPoints, setNewPoints]= useState([])
+    const [productos, setProductos]= useState([]);
+    
+
     return (
-        <AppContext.Provider value= {{userYPoint, setUserYPoint}
-        // , {newPoints, setNewPoints}
+        <AppContext.Provider value= {{userYPoint, setUserYPoint, productos, setProductos}
     }>
         {props.children}
         </AppContext.Provider>
