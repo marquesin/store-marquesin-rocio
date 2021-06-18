@@ -15,3 +15,6 @@ code {
 .App{
   text-align: center;
 }
+.conteinerPagination{
+  display: flex;
+}

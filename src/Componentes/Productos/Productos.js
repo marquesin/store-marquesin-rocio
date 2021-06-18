@@ -6,7 +6,7 @@ import { AppContext } from "../../Context/AppContext";
 
 import React from "react";
 
-export default function Productos() {
+export default function Productos(props) {
   const { productos } = useContext(AppContext);
   // const [hover, setHover] = useState(true);
   // // const [hoverOut, setHoverOut] = useState(false);
@@ -26,7 +26,7 @@ export default function Productos() {
   // }, []);
   return (
     <div className="conteinerProductos">
-      {productos.map((producto) => {
+      {props.productos.map((producto) => {
         return (
           <>
             <Product
