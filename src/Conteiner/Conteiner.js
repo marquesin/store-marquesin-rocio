@@ -19,7 +19,7 @@ export default function Conteiner() {
   return (
     <div>
       <Header />
-      <FiltrosDeProductos />
+      <FiltrosDeProductos currentPage={currentPage} paginate={paginate} />
       <Productos productos={currentPost} />
       {/* <PieDePagina /> */}
       <Pagination

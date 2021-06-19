@@ -1,7 +1,7 @@
 .conteinerPagination{
     display: flex;
     margin: auto;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     height: 100px;
     margin-top: 1%;
     padding-bottom: 2%;
@@ -9,10 +9,6 @@
     margin-bottom: 5%;
     height: 5vw;
     width: 1176px;
-}
-.item-pagina{
-    width: 150px;
-    height: 60px;
 }
 .cantidadProductDisponibleBotton{
     font-family: Source Sans Pro;
@@ -23,4 +19,37 @@ line-height: 48px;
 letter-spacing: -0.15000003576278687px;
 text-align: left;
 color: rgba(97, 97, 97, 1);
+}
+.item-pagina{
+    width: 150px;
+    height: 60px;
+    margin-top: 2%;
+    display: flex;
+    margin-left: 30%;
+}
+.buttonNumberPage{
+    background-color: #0AD4FA;
+    border:none;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    color: rgba(97, 97, 97, 1);
+    border-radius: 10%;
+}
+.buttonNumberPage:hover{
+    color: #0AD4FA;
+    background-color: rgba(97, 97, 97, 1);
+    cursor: pointer;
+    border-radius: 20%;
+}
+.arrow:hover{
+    cursor: pointer;
+}
+.page-link{
+    text-decoration: none;
+    color: rgba(97, 97, 97, 1);
+}
+.arrow{
+   margin-left: 34%;
+   margin-top: 2%;
 }

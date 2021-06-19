@@ -16,33 +16,31 @@ export default function Paginacion({
 
   return (
     <div className="conteinerPagination">
-      <p className="cantidadProductDisponibleBotton">16 of 32 products</p>
-      {currentPage == 2 ? (
-        <button>
-          <ArrowLeft onClick={() => paginate(1)} />
-        </button>
+      {currentPage === 1 ? (
+        <p className="cantidadProductDisponibleBotton">16 of 32 products</p>
       ) : (
-        ""
+        <p className="cantidadProductDisponibleBotton">32 of 32 products</p>
       )}
-      {pageNumber.map((numbers) => {
-        return (
-          <div key={numbers} className="item-pagina">
-            <a
-              href="!#"
-              className="page-link"
+      <div className="item-pagina">
+        {pageNumber.map((numbers) => {
+          return (
+            <button
+              className="buttonNumberPage"
               onClick={() => paginate(numbers)}
             >
               {numbers}
-            </a>
-          </div>
-        );
-      })}{" "}
+            </button>
+          );
+        })}{" "}
+      </div>
       {currentPage == 1 ? (
-        <>
-          <botton>
-            <ArrowRight onClick={() => paginate(2)} />
-          </botton>
-        </>
+        <div className="arrow">
+          <ArrowRight onClick={() => paginate(2)} />
+        </div>
+      ) : currentPage == 2 ? (
+        <div className="arrow">
+          <ArrowLeft onClick={() => paginate(1)} />
+        </div>
       ) : (
         ""
       )}
