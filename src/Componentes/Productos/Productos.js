@@ -1,13 +1,13 @@
 import { ReactComponent as BuyBlue } from "./images/Icons/buy-blue.svg";
-import { ReactComponent as BuyWhite } from "./images/Icons/buy-white.svg";
-import { ReactComponent as Coin } from "./images/Icons/coin.svg";
-import { useContext, useState, useEffect } from "react";
-import { AppContext } from "../../Context/AppContext";
+// import { ReactComponent as BuyWhite } from "./images/Icons/buy-white.svg";
+// import { ReactComponent as Coin } from "./images/Icons/coin.svg";
+// import { useContext } from "react";
+// import { AppContext } from "../../Context/AppContext";
 
 import React from "react";
 
 export default function Productos(props) {
-  const { productos } = useContext(AppContext);
+  // const { productos } = useContext(AppContext);
   // const [hover, setHover] = useState(true);
   // // const [hoverOut, setHoverOut] = useState(false);
 

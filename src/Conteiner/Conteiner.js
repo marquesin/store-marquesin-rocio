@@ -3,7 +3,6 @@ import { useContext } from "react";
 import Header from "../Componentes/Header.js";
 import FiltrosDeProductos from "../Componentes/FiltrosDeProductos";
 import Productos from "../Componentes/Productos/Productos.js";
-// import PieDePagina from "../Componentes/PieDePagina.js";
 import Api from "../Api/Api";
 import Pagination from "../Paginacion/Paginacion.js";
 import { AppContext } from "../Context/AppContext.jsx";
@@ -21,7 +20,6 @@ export default function Conteiner() {
       <Header />
       <FiltrosDeProductos currentPage={currentPage} paginate={paginate} />
       <Productos productos={currentPost} />
-      {/* <PieDePagina /> */}
       <Pagination
         productPerPagin={productPerPagin}
         totalProducts={productos.length}

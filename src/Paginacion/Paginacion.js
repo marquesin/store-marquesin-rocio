@@ -33,11 +33,11 @@ export default function Paginacion({
           );
         })}{" "}
       </div>
-      {currentPage == 1 ? (
+      {currentPage === 1 ? (
         <div className="arrow">
           <ArrowRight onClick={() => paginate(2)} />
         </div>
-      ) : currentPage == 2 ? (
+      ) : currentPage === 2 ? (
         <div className="arrow">
           <ArrowLeft onClick={() => paginate(1)} />
         </div>

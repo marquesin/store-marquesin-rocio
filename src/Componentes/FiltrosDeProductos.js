@@ -23,11 +23,11 @@ export default function FiltrosDeProductos({ currentPage, paginate }) {
           <button className="highest">Highest price</button>
         </div>
       </div>
-      {currentPage == 1 ? (
+      {currentPage === 1 ? (
         <div className="arrow-top">
           <ArrowRight onClick={() => paginate(2)} />
         </div>
-      ) : currentPage == 2 ? (
+      ) : currentPage === 2 ? (
         <div className="arrow-top">
           <ArrowLeft onClick={() => paginate(1)} />
         </div>

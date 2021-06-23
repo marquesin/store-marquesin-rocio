@@ -4,18 +4,22 @@
 }
 /* ---------------HEADER------------------ */
 .conteiner-top-header{
-height: 80px;
-/* width: 1440px; */
+    position: fixed;
+height: 90px;
+width: 100%;
 left: 0px;
 top: 0px;
 border-radius: 0px;
 text-align: center;
 display: flex;
 justify-content: space-between;
+background-color: white;
+z-index: 50;
 }
 
 .image-header{
     width: 100%;
+    
 }
 .usuarioYMonedas{
     display: flex;
@@ -28,7 +32,7 @@ justify-content: space-between;
   }
   .monedaMasPuntos{
     height: 48px;
-    width: 103px;
+    width: 170px;
     border-radius: 20.5px;
     background: #EDEDED;
     display: flex;
@@ -44,8 +48,8 @@ justify-content: space-between;
   }
   .userName{
       margin:5% 5% 2% 0;
-      height: 48px;
-      width:100px;
+      height: 105px;
+      width:150px;
       font-size: 24px;
        font-style: normal;
        font-weight: 400;
@@ -53,10 +57,11 @@ justify-content: space-between;
        color: rgba(97, 97, 97, 1);
   }
   .moneda{
-      margin:20% 2% 0 5% ;
+      margin:15% 2% 2% 5% ;
   }
 .conteiner-image-header{
     height: 480px;
+    margin-top: 5%;
 }
 .electronics{
     height: 80px;
@@ -72,6 +77,28 @@ justify-content: space-between;
     color: #FFFFFF;
     margin-left:5% ;
 
+}
+.conteinerButtonMonedas{
+    display: flex;
+    align-items: center;
+    width: 25%;
+   margin-right: auto;
+}
+.btn1000, .btn5000, .btn7500{
+    background-color: #0AD4FA;
+    border-radius: 20.5px;
+    border: none;
+    color: rgba(255, 255, 255, 1);
+    width: 50%;
+    height: 40%;
+    margin-left: 15%;
+    font-size: 12px;
+}
+.btn1000:hover, .btn5000:hover, .btn7500:hover{
+    cursor: pointer;
+    background-color: #FFFFFF;
+    color: #0AD4FA;
+    border: solid 2px #0AD4FA;
 }
 /* --------------------------------------- */
 /* -----------------FILTROS----------------- */
