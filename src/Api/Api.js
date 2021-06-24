@@ -9,6 +9,8 @@ export default function Api() {
     setAgregarPuntos,
     getUserYPoints,
     setgetUserYPoints,
+    idDeProductoPorCanjear,
+    setIdDeProductoPorCanjear,
   } = useContext(AppContext);
 
   const headers = {
@@ -75,5 +77,32 @@ export default function Api() {
     }
   }, [agregarPuntos]);
 
-  return <>{(setUserYPoint, setProductos, agregarPuntos)}</>;
+  // Para canjear productos:
+
+  useEffect(() => {
+    if (idDeProductoPorCanjear !== "") {
+      fetch("https://private-77968-aerolabchallenge.apiary-proxy.com/redeem", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk",
+        },
+        body: `{  "productId": 
+    "${idDeProductoPorCanjear}"
+}`,
+      })
+        .then((response) => response.json(response))
+        .then((resultado) => {
+          return console.log(resultado);
+        })
+        .catch((e) => "Error:" + e);
+      setgetUserYPoints(true);
+      setIdDeProductoPorCanjear("");
+    }
+  }, [idDeProductoPorCanjear]);
+  return (
+    <>{(setUserYPoint, setProductos, agregarPuntos, idDeProductoPorCanjear)}</>
+  );
 }

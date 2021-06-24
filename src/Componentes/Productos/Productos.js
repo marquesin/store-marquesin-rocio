@@ -1,13 +1,14 @@
 import { ReactComponent as BuyBlue } from "./images/Icons/buy-blue.svg";
 // import { ReactComponent as BuyWhite } from "./images/Icons/buy-white.svg";
 // import { ReactComponent as Coin } from "./images/Icons/coin.svg";
-// import { useContext } from "react";
-// import { AppContext } from "../../Context/AppContext";
+import { useContext } from "react";
+import { AppContext } from "../../Context/AppContext";
 
 import React from "react";
 
 export default function Productos(props) {
-  // const { productos } = useContext(AppContext);
+  const { setIdDeProductoPorCanjear } = useContext(AppContext);
+
   // const [hover, setHover] = useState(true);
   // // const [hoverOut, setHoverOut] = useState(false);
 
@@ -25,7 +26,7 @@ export default function Productos(props) {
   //   <Product />;
   // }, []);
   return (
-    <div className="conteinerProductos">
+    <div className="conteinerProductos" key="conteinerProductos">
       {props.productos.map((producto) => {
         return (
           <>
@@ -41,6 +42,14 @@ export default function Productos(props) {
   );
 }
 function Product(props) {
+  const { setIdDeProductoPorCanjear } = useContext(AppContext);
+  // const handlerCanje = (e) => {
+  //   setIdDeProductoPorCanjear(props.producto.id);
+  //   console.log(props.producto.id);
+  // };
+  const handlerCanje = () => {
+    setIdDeProductoPorCanjear(props.producto._id);
+  };
   return (
     <>
       <div
@@ -55,9 +64,9 @@ function Product(props) {
           src={props.producto.img.url}
           alt={props.producto.name}
           className="imageProducto"
-          key={props.producto.id}
+          // key={props.producto.id}
         ></img>
-        <BuyBlue className="buyBlue" />
+        <BuyBlue className="buyBlue" onClick={handlerCanje} />
         <div className="detalleProducto">
           <p className="categoryProducto">{props.producto.category}</p>
           <p className="nameProducto">{props.producto.name}</p>
