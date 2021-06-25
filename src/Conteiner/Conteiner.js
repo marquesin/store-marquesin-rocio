@@ -6,6 +6,8 @@ import Productos from "../Componentes/Productos/Productos.js";
 import Api from "../Api/Api";
 import Pagination from "../Paginacion/Paginacion.js";
 import { AppContext } from "../Context/AppContext.jsx";
+import CompraExitosaPopUp from "../Componentes/CompraExitosaPopUp.js";
+
 export default function Conteiner() {
   const { productos } = useContext(AppContext);
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,6 +21,7 @@ export default function Conteiner() {
     <div>
       <Header />
       <FiltrosDeProductos currentPage={currentPage} paginate={paginate} />
+      <CompraExitosaPopUp></CompraExitosaPopUp>
       <Productos productos={currentPost} />
       <Pagination
         productPerPagin={productPerPagin}

@@ -11,6 +11,7 @@ export default function Api() {
     setgetUserYPoints,
     idDeProductoPorCanjear,
     setIdDeProductoPorCanjear,
+    setCompraIniciada,
   } = useContext(AppContext);
 
   const headers = {
@@ -95,7 +96,7 @@ export default function Api() {
       })
         .then((response) => response.json(response))
         .then((resultado) => {
-          return console.log(resultado);
+          return console.log(resultado), setCompraIniciada(true);
         })
         .catch((e) => "Error:" + e);
       setgetUserYPoints(true);

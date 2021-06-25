@@ -8,9 +8,10 @@ export const AppProvider = (props) => {
     const[agregarPuntos, setAgregarPuntos]=useState();
     const[getUserYPoints, setgetUserYPoints]=useState(true);
     const[idDeProductoPorCanjear, setIdDeProductoPorCanjear]=useState("");
+    const [compraIniciada, setCompraIniciada]= useState(false);
 
     return (
-        <AppContext.Provider value= {{userYPoint, setUserYPoint, productos, setProductos,agregarPuntos, setAgregarPuntos,getUserYPoints, setgetUserYPoints,idDeProductoPorCanjear, setIdDeProductoPorCanjear}
+        <AppContext.Provider value= {{userYPoint, setUserYPoint, productos, setProductos,agregarPuntos, setAgregarPuntos,getUserYPoints, setgetUserYPoints,idDeProductoPorCanjear, setIdDeProductoPorCanjear,compraIniciada, setCompraIniciada}
     }>
         {props.children}
         </AppContext.Provider>

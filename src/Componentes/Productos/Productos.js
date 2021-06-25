@@ -42,13 +42,15 @@ export default function Productos(props) {
   );
 }
 function Product(props) {
-  const { setIdDeProductoPorCanjear } = useContext(AppContext);
+  const { setIdDeProductoPorCanjear, setCompraIniciada } =
+    useContext(AppContext);
   // const handlerCanje = (e) => {
   //   setIdDeProductoPorCanjear(props.producto.id);
   //   console.log(props.producto.id);
   // };
   const handlerCanje = () => {
     setIdDeProductoPorCanjear(props.producto._id);
+    // setCompraIniciada(true);
   };
   return (
     <>
