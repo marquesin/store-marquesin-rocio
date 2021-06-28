@@ -130,7 +130,7 @@ text-align: left;
 color: rgba(97, 97, 97, 1);
 margin: auto;
 }
-.conteinerFiltros{
+/* .conteinerFiltros{
     display: flex;
      
 }
@@ -158,7 +158,7 @@ margin: auto;
     line-height: 48px;
     color:  rgba(255, 255, 255, 1);
     margin-right: 3%;
-}
+} */
 .fitros{
     width: 600px;
     height: 100%;
@@ -304,4 +304,11 @@ height: 276px;
     background-color: white;
     color: #0AD4FA;
     border: solid 2px #0AD4FA;
+}
+/* ------------------------------Loading-------------------------- */
+.conteinerLoading{
+    position: fixed;
+    z-index: 30;
+    top: 50%;
+    left: 40%;
 }

@@ -38,9 +38,9 @@ export default function Header() {
 }
 
 function AgregandoPuntos() {
-  const { setAgregarPuntos, agrearPuntos } = useContext(AppContext);
+  const { setAgregarPuntos, agrearPuntos, setLoading } = useContext(AppContext);
   const handlerBotton1 = () => {
-    // setBtn1(true);
+    // setLoading(true);
     setAgregarPuntos(1000);
   };
   const handlerBotton2 = () => {

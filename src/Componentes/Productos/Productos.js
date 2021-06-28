@@ -42,7 +42,7 @@ export default function Productos(props) {
   );
 }
 function Product(props) {
-  const { setIdDeProductoPorCanjear, setCompraIniciada } =
+  const { setIdDeProductoPorCanjear, setCompraIniciada, setLoading } =
     useContext(AppContext);
   // const handlerCanje = (e) => {
   //   setIdDeProductoPorCanjear(props.producto.id);
@@ -50,8 +50,10 @@ function Product(props) {
   // };
   const handlerCanje = () => {
     setIdDeProductoPorCanjear(props.producto._id);
+    setLoading(true);
     // setCompraIniciada(true);
   };
+
   return (
     <>
       <div

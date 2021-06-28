@@ -7,20 +7,63 @@ import Api from "../Api/Api";
 import Pagination from "../Paginacion/Paginacion.js";
 import { AppContext } from "../Context/AppContext.jsx";
 import CompraExitosaPopUp from "../Componentes/CompraExitosaPopUp.js";
+import Loading from "../Componentes/Loading.js";
 
 export default function Conteiner() {
   const { productos } = useContext(AppContext);
+  //aca tengo que filtar por categoria
+  //
+  const [categoria, setCategoria] = useState("categorias");
+  const [orden, setOden] = useState("Sort by:");
+
+  const manejarCategoria = (e) => {
+    setCategoria(e.target.value);
+  };
+  const manejarOrden = (e) => {
+    setOden(e.target.value);
+  };
+
+  const nuevaLista = productos.filter((productos) => {
+    if (categoria !== "categorias") {
+      return productos.category == categoria;
+    } else if (categoria === "categorias") {
+      return productos;
+    }
+  });
+
+  // if (orden == "Lowest price") {
+  //     return productos.cost.sort(function (a, b) {
+  //       return a - b;
+  //     });
+  //   } else if (orden === "Sort by:") {
+  //     return productos;
+  //   } else if (orden === "Highest price") {
+  //     return productos.cost.sort(function (a, b) {
+  //       return b - a;
+  //     });
+  //   }
+  //   return productos;
+
+  // numeros.sort(function(a, b){return a - b}); // --> 3, 12, 23
   const [currentPage, setCurrentPage] = useState(1);
   const [productPerPagin] = useState(16);
 
   const indexOfLastPost = currentPage * productPerPagin;
   const indexOfFirstPost = indexOfLastPost - productPerPagin;
-  const currentPost = productos.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPost = nuevaLista.slice(indexOfFirstPost, indexOfLastPost);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <div>
       <Header />
-      <FiltrosDeProductos currentPage={currentPage} paginate={paginate} />
+      <FiltrosDeProductos
+        currentPage={currentPage}
+        paginate={paginate}
+        categoria={categoria}
+        manejarCategoria={manejarCategoria}
+        orden={orden}
+        manejarOrden={manejarOrden}
+      />
+      <Loading></Loading>
       <CompraExitosaPopUp></CompraExitosaPopUp>
       <Productos productos={currentPost} />
       <Pagination
