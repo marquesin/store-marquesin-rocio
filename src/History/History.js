@@ -4,7 +4,6 @@ import { AppContext } from "../Context/AppContext";
 import { Link } from "react-router-dom";
 export default function History() {
   const { history } = useContext(AppContext);
-  console.log(history);
   return (
     <div>
       <Link to="/">Home</Link> <h1>Historial de compras</h1>

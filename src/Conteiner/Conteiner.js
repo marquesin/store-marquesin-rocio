@@ -52,20 +52,6 @@ export default function Conteiner() {
     }
   });
 
-  // if (orden == "Lowest price") {
-  //     return productos.cost.sort(function (a, b) {
-  //       return a - b;
-  //     });
-  //   } else if (orden === "Sort by:") {
-  //     return productos;
-  //   } else if (orden === "Highest price") {
-  //     return productos.cost.sort(function (a, b) {
-  //       return b - a;
-  //     });
-  //   }
-  //   return productos;
-
-  // numeros.sort(function(a, b){return a - b}); // --> 3, 12, 23
   const [currentPage, setCurrentPage] = useState(1);
   const [productPerPagin] = useState(16);
 
@@ -84,6 +70,7 @@ export default function Conteiner() {
           manejarCategoria={manejarCategoria}
           orden={orden}
           manejarOrden={manejarOrden}
+          currentPost={currentPost}
         />
         <Loading></Loading>
         <CompraExitosaPopUp></CompraExitosaPopUp>
@@ -93,6 +80,8 @@ export default function Conteiner() {
           totalProducts={productos.length}
           paginate={paginate}
           currentPage={currentPage}
+          currentPost={currentPost}
+          categoria={categoria}
         />
         <Api />
       </Route>

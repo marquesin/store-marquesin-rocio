@@ -8,6 +8,8 @@ export default function Paginacion({
   totalProducts,
   paginate,
   currentPage,
+  currentPost,
+  categoria,
 }) {
   const pageNumber = [];
   for (let i = 1; i <= Math.ceil(totalProducts / productPerPagin); i++) {
@@ -16,11 +18,11 @@ export default function Paginacion({
 
   return (
     <div className="conteinerPagination">
-      {currentPage === 1 ? (
-        <p className="cantidadProductDisponibleBotton">16 of 32 products</p>
-      ) : (
-        <p className="cantidadProductDisponibleBotton">32 of 32 products</p>
-      )}
+      <ProductosPorPagina
+        currentPage={currentPage}
+        categoria={categoria}
+        currentPost={currentPost}
+      />
       <div className="item-pagina">
         {pageNumber.map((numbers) => {
           return (
@@ -41,6 +43,23 @@ export default function Paginacion({
         <div className="arrow">
           <ArrowLeft onClick={() => paginate(1)} />
         </div>
+      ) : (
+        ""
+      )}
+    </div>
+  );
+}
+export function ProductosPorPagina(props) {
+  return (
+    <div className="conteinerCantidad">
+      {props.currentPage === 1 && props.categoria !== "categorias" ? (
+        <p className="cantidadProductDisponible">
+          {props.currentPost.length} of {props.currentPost.length} products
+        </p>
+      ) : props.currentPage === 1 ? (
+        <p className="cantidadProductDisponible">16 of 32 products</p>
+      ) : props.currentPage === 2 && props.categoria === "categorias" ? (
+        <p className="cantidadProductDisponible">32 of 32 products</p>
       ) : (
         ""
       )}
