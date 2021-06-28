@@ -13,6 +13,8 @@ export default function Api() {
     setIdDeProductoPorCanjear,
     setCompraIniciada,
     setLoading,
+    setHistory,
+    history,
   } = useContext(AppContext);
   setLoading(true);
   const headers = {
@@ -110,6 +112,8 @@ export default function Api() {
       setIdDeProductoPorCanjear("");
     }
   }, [idDeProductoPorCanjear]);
+
+  // -----------------------------------------historial--------------------------
   useEffect(() => {
     fetch(
       "https://private-77968-aerolabchallenge.apiary-proxy.com/user/history",
@@ -124,8 +128,8 @@ export default function Api() {
       }
     )
       .then((response) => response.json(response))
-      .then((resultado) => console.log(resultado));
-  }, []);
+      .then((resultado) => setHistory(resultado));
+  }, [setHistory, history]);
 
   return (
     <>
@@ -134,7 +138,8 @@ export default function Api() {
         setProductos,
         agregarPuntos,
         idDeProductoPorCanjear,
-        setLoading(false))
+        setLoading(false),
+        setHistory)
       }
     </>
   );

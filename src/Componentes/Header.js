@@ -4,6 +4,7 @@ import { ReactComponent as IconHeader } from "./images/logo.svg";
 import { ReactComponent as Coin } from "./images/coin.svg";
 import { useContext, useState } from "react";
 import { AppContext } from "../Context/AppContext";
+import { Link } from "react-router-dom";
 
 import imageHeader from "./images/header.png";
 export default function Header() {
@@ -18,6 +19,9 @@ export default function Header() {
           agrearPuntos={agrearPuntos}
           setAgregarPuntos={setAgregarPuntos}
         />
+
+        <Link to="/history">Hystory buy</Link>
+
         <div className="usuarioYMonedas">
           <p className="userName">{userYPoint?.name}</p>
           <div className="monedaMasPuntos">

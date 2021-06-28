@@ -8,6 +8,8 @@ import Pagination from "../Paginacion/Paginacion.js";
 import { AppContext } from "../Context/AppContext.jsx";
 import CompraExitosaPopUp from "../Componentes/CompraExitosaPopUp.js";
 import Loading from "../Componentes/Loading.js";
+import { Route } from "react-router-dom";
+import History from "../History/History.js";
 
 export default function Conteiner() {
   const { productos } = useContext(AppContext);
@@ -22,8 +24,27 @@ export default function Conteiner() {
   const manejarOrden = (e) => {
     setOden(e.target.value);
   };
+  const productosOrden = () => {
+    if (orden === "Lowest price") {
+      return productos
+        .sort((a, b) => a.cost - b.cost)
+        .map((productos) => {
+          return productos;
+        });
+    } else if (orden === "Highest price") {
+      return productos
+        .sort((a, b) => b.cost - a.cost)
+        .map((productos) => {
+          return productos;
+        });
+    } else if (orden === "Sort by:") {
+      return productos;
+    }
+    return productos;
+  };
+  const ordenados = productosOrden();
 
-  const nuevaLista = productos.filter((productos) => {
+  const nuevaLista = ordenados.filter((productos) => {
     if (categoria !== "categorias") {
       return productos.category == categoria;
     } else if (categoria === "categorias") {
@@ -54,25 +75,30 @@ export default function Conteiner() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <div>
-      <Header />
-      <FiltrosDeProductos
-        currentPage={currentPage}
-        paginate={paginate}
-        categoria={categoria}
-        manejarCategoria={manejarCategoria}
-        orden={orden}
-        manejarOrden={manejarOrden}
-      />
-      <Loading></Loading>
-      <CompraExitosaPopUp></CompraExitosaPopUp>
-      <Productos productos={currentPost} />
-      <Pagination
-        productPerPagin={productPerPagin}
-        totalProducts={productos.length}
-        paginate={paginate}
-        currentPage={currentPage}
-      />
-      <Api />
+      <Route exact path="/">
+        <Header />
+        <FiltrosDeProductos
+          currentPage={currentPage}
+          paginate={paginate}
+          categoria={categoria}
+          manejarCategoria={manejarCategoria}
+          orden={orden}
+          manejarOrden={manejarOrden}
+        />
+        <Loading></Loading>
+        <CompraExitosaPopUp></CompraExitosaPopUp>
+        <Productos productos={currentPost} />
+        <Pagination
+          productPerPagin={productPerPagin}
+          totalProducts={productos.length}
+          paginate={paginate}
+          currentPage={currentPage}
+        />
+        <Api />
+      </Route>
+      <Route exact path="/history">
+        <History />
+      </Route>
     </div>
   );
 }
