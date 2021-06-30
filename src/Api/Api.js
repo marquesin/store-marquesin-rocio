@@ -3,6 +3,7 @@ import { AppContext } from "../Context/AppContext";
 
 export default function Api() {
   const {
+    userYPoint,
     setUserYPoint,
     setProductos,
     agregarPuntos,
@@ -14,7 +15,6 @@ export default function Api() {
     setCompraIniciada,
     setLoading,
     setHistory,
-    history,
   } = useContext(AppContext);
   setLoading(true);
   const headers = {
@@ -23,28 +23,29 @@ export default function Api() {
     Authorization:
       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk",
   };
+  // const BASE_URL = `https://private-77968-aerolabchallenge.apiary-proxy.com/`;
 
   //   -------------------Usuario y sus puntos actuales----------------------
   useEffect(() => {
     setLoading(true);
-    fetch(`https://private-77968-aerolabchallenge.apiary-proxy.com/user/me`, {
+    fetch("https://coding-challenge-api.aerolab.co/user/me", {
       method: "GET",
       headers,
     })
       .then((response) => response.json(response))
       .then((usuario) => {
-        return setLoading(true), setUserYPoint(usuario);
+        return setUserYPoint(usuario);
       })
       .catch((e) => console.log("error: " + e));
     setgetUserYPoints(false);
-    // setLoading(false);
-  }, [getUserYPoints]);
+    setLoading(false);
+  }, [getUserYPoints, setUserYPoint]);
 
   //1000, 5000 o 7500 puntos PUEDEN INGRESAR NO OTROS
   //   ------------------------------Productos---------------------------------------
   useEffect(() => {
     setLoading(true);
-    fetch("https://private-77968-aerolabchallenge.apiary-proxy.com/products", {
+    fetch(`https://coding-challenge-api.aerolab.co/products`, {
       method: "GET",
       headers,
     })
@@ -56,26 +57,22 @@ export default function Api() {
   }, [setProductos, setUserYPoint, agregarPuntos, setAgregarPuntos]);
 
   //   ------------------------------Agregar Puntos-------------------------------
-
   useEffect(() => {
     setLoading(true);
     if (agregarPuntos > 0) {
       setLoading(true);
-      fetch(
-        "https://private-77968-aerolabchallenge.apiary-proxy.com/user/points",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk",
-          },
-          body: `{  "amount": 
+      fetch(`https://coding-challenge-api.aerolab.co/user/points`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk",
+        },
+        body: `{  "amount": 
         ${agregarPuntos}
     }`,
-        }
-      )
+      })
         .then((response) => response.json(response))
         .then((resultado) => {
           return resultado;
@@ -87,11 +84,10 @@ export default function Api() {
   }, [agregarPuntos]);
 
   // Para canjear productos:
-
   useEffect(() => {
     setLoading(true);
     if (idDeProductoPorCanjear !== "") {
-      fetch("https://private-77968-aerolabchallenge.apiary-proxy.com/redeem", {
+      fetch(`https://coding-challenge-api.aerolab.co/redeem`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -105,7 +101,7 @@ export default function Api() {
       })
         .then((response) => response.json(response))
         .then((resultado) => {
-          return console.log(resultado), setCompraIniciada(true);
+          return resultado, setCompraIniciada(true);
         })
         .catch((e) => "Error:" + e);
       setgetUserYPoints(true);
@@ -115,9 +111,9 @@ export default function Api() {
 
   // -----------------------------------------historial--------------------------
   useEffect(() => {
-    fetch(
-      "https://private-77968-aerolabchallenge.apiary-proxy.com/user/history",
-      {
+    if (userYPoint !== []) {
+      setLoading(true);
+      fetch(`https://coding-challenge-api.aerolab.co/user/history`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -125,16 +121,21 @@ export default function Api() {
           Authorization:
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk",
         },
-      }
-    )
-      .then((response) => response.json(response))
-      .then((resultado) => setHistory(resultado));
-  }, [setHistory, history]);
+      })
+        .then((response) => response.json(response))
+        .then((resultado) => {
+          return setHistory(resultado);
+        })
+        .catch((e) => "Error:" + e);
+      setLoading(false);
+    }
+  }, [setHistory]);
 
   return (
     <>
       {
         (setUserYPoint,
+        userYPoint,
         setProductos,
         agregarPuntos,
         idDeProductoPorCanjear,
