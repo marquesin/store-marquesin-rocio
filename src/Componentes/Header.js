@@ -56,7 +56,7 @@ export default function Header() {
           ""
         )}
         <img src={imageHeader} alt={"imageHeader"} className="image-header" />
-        <h1 className="electronics">Electronics</h1>
+        <h1 className="electronics">Electronicsuuuuu</h1>
       </div>{" "}
     </div>
   );
