@@ -90,7 +90,8 @@ export default function Conteiner() {
         />
         <Api />
       </Route>
-      <Route exact path="/history">
+      {/* <Router > */}
+      <Route exact path="/history" basename="/store-marquesin-rocio">
         <History />
         <PaginationHistory
           productPerPagin={historyPerPagin}
@@ -101,6 +102,7 @@ export default function Conteiner() {
           categoria={categoria}
         />
       </Route>
+      {/* </Router> */}
     </div>
   );
 }
