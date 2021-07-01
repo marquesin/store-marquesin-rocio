@@ -1,4 +1,6 @@
 import { ReactComponent as BuyBlue } from "./images/Icons/buy-blue.svg";
+import { ReactComponent as Coin } from "./images/Icons/coin.svg";
+
 // import { ReactComponent as BuyWhite } from "./images/Icons/buy-white.svg";
 // import { ReactComponent as Coin } from "./images/Icons/coin.svg";
 import { useContext } from "react";
@@ -42,7 +44,7 @@ export default function Productos(props) {
   );
 }
 function Product(props) {
-  const { setIdDeProductoPorCanjear, setCompraIniciada, setLoading } =
+  const { setIdDeProductoPorCanjear, userYPoint, setLoading } =
     useContext(AppContext);
   // const handlerCanje = (e) => {
   //   setIdDeProductoPorCanjear(props.producto.id);
@@ -70,7 +72,18 @@ function Product(props) {
           className="imageProducto"
           // key={props.producto.id}
         ></img>
-        <BuyBlue className="buyBlue" onClick={handlerCanje} />
+        {userYPoint.points > props.producto.cost ? (
+          <BuyBlue className="buyBlue" onClick={handlerCanje} />
+        ) : userYPoint !== [] && props.producto !== [] ? (
+          <div className="needMoney">
+            <p className="pNeed">
+              You need {props.producto.cost - userYPoint.points}
+            </p>
+            <Coin className="coinNeed" />
+          </div>
+        ) : (
+          ""
+        )}
         <div className="detalleProducto">
           <p className="categoryProducto">{props.producto.category}</p>
           <p className="nameProducto">{props.producto.name}</p>

@@ -38,7 +38,7 @@ export default function Api() {
       })
       .catch((e) => console.log("error: " + e));
     setgetUserYPoints(false);
-    setLoading(false);
+    // setLoading(false);
   }, [getUserYPoints, setUserYPoint]);
 
   //1000, 5000 o 7500 puntos PUEDEN INGRESAR NO OTROS
@@ -87,6 +87,7 @@ export default function Api() {
   useEffect(() => {
     setLoading(true);
     if (idDeProductoPorCanjear !== "") {
+      setLoading(true);
       fetch(`https://coding-challenge-api.aerolab.co/redeem`, {
         method: "POST",
         headers: {
@@ -127,10 +128,9 @@ export default function Api() {
           return setHistory(resultado);
         })
         .catch((e) => "Error:" + e);
-      setLoading(false);
     }
   }, [setHistory]);
-
+  setLoading(false);
   return (
     <>
       {
@@ -139,7 +139,6 @@ export default function Api() {
         setProductos,
         agregarPuntos,
         idDeProductoPorCanjear,
-        setLoading(false),
         setHistory)
       }
     </>

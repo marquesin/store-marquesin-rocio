@@ -270,6 +270,41 @@ box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     top: -65%
   
 }
+.buyBlue:hover{
+    cursor: pointer;
+}
+.needMoney{
+    width :142px;
+    height: 42px;
+    background: #616161;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+    border-radius: 100px;
+    position: relative;
+    right: -40%;
+    top: -65%;
+    display: flex;
+}
+.coinNeed{
+    width: 15,24px;
+    height:15,24px;
+    border-radius: 0px;
+    margin: 4% 0 0 6%;
+
+}
+.pNeed{
+    width: 86px;
+    height: 18px;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 18px;
+text-align: right;
+letter-spacing: -0.0329412px;
+color: #FFFFFF;
+margin-top: 3%;
+
+}
 .detalleProducto{
     position: relative;
     top: -17%;

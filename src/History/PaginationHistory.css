@@ -1,0 +1,41 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 100%;
+}
+.Home{
+    width: 150px;
+    height: 50px;
+    background-color: #0AD4FA;
+    border: none;
+}
+.Home a{
+    text-decoration: none;
+    font-size: 23px;
+    color: white;
+}
+.item-paginaH{
+    width: 150px;
+    height: 60px;
+    margin-top: 2%;
+    display: flex;
+    color: white;
+}
+.History{
+
+font-style: normal;
+font-weight: bold;
+font-size: 64px;
+line-height: 80px;
+color: black;
+/* color: #FFFFFF; */
+}
+.conteinerItemHistory{
+    display: flex;
+}
+.itemH{
+    background-color: #0AD4FA;
+    border: 3px white solid;
+    color: white;
+}
