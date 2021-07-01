@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/store-marquesin-rocio/static/css/main.0f45f179.chunk.css",
+    "main.js": "/store-marquesin-rocio/static/js/main.c771def4.chunk.js",
+    "main.js.map": "/store-marquesin-rocio/static/js/main.c771def4.chunk.js.map",
+    "runtime-main.js": "/store-marquesin-rocio/static/js/runtime-main.312f0436.js",
+    "runtime-main.js.map": "/store-marquesin-rocio/static/js/runtime-main.312f0436.js.map",
+    "static/js/2.06924e16.chunk.js": "/store-marquesin-rocio/static/js/2.06924e16.chunk.js",
+    "static/js/2.06924e16.chunk.js.map": "/store-marquesin-rocio/static/js/2.06924e16.chunk.js.map",
+    "static/js/3.6d8287e0.chunk.js": "/store-marquesin-rocio/static/js/3.6d8287e0.chunk.js",
+    "static/js/3.6d8287e0.chunk.js.map": "/store-marquesin-rocio/static/js/3.6d8287e0.chunk.js.map",
+    "index.html": "/store-marquesin-rocio/index.html",
+    "static/css/main.0f45f179.chunk.css.map": "/store-marquesin-rocio/static/css/main.0f45f179.chunk.css.map",
+    "static/js/2.06924e16.chunk.js.LICENSE.txt": "/store-marquesin-rocio/static/js/2.06924e16.chunk.js.LICENSE.txt",
+    "static/media/arrow-left.e6eb9be1.svg": "/store-marquesin-rocio/static/media/arrow-left.e6eb9be1.svg",
+    "static/media/arrow-right.3306c112.svg": "/store-marquesin-rocio/static/media/arrow-right.3306c112.svg",
+    "static/media/buy-blue.c5c4f01c.svg": "/store-marquesin-rocio/static/media/buy-blue.c5c4f01c.svg",
+    "static/media/check-solid.5dcf9568.svg": "/store-marquesin-rocio/static/media/check-solid.5dcf9568.svg",
+    "static/media/coin.b8bc711d.svg": "/store-marquesin-rocio/static/media/coin.b8bc711d.svg",
+    "static/media/header.525f01ed.png": "/store-marquesin-rocio/static/media/header.525f01ed.png",
+    "static/media/loading.5972f390.svg": "/store-marquesin-rocio/static/media/loading.5972f390.svg",
+    "static/media/logo.b13161ae.svg": "/store-marquesin-rocio/static/media/logo.b13161ae.svg",
+    "static/media/minus-solid.4d0790fe.svg": "/store-marquesin-rocio/static/media/minus-solid.4d0790fe.svg",
+    "static/media/plus-solid.c82024f4.svg": "/store-marquesin-rocio/static/media/plus-solid.c82024f4.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.312f0436.js",
+    "static/js/2.06924e16.chunk.js",
+    "static/css/main.0f45f179.chunk.css",
+    "static/js/main.c771def4.chunk.js"
+  ]
+}
