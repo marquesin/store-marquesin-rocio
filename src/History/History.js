@@ -13,7 +13,7 @@ export default function History() {
       <button className="Home">
         <Link to="/">Return Home</Link>
       </button>
-      <h1 className="History">History</h1>
+      <h1 className="History">Historia</h1>
       <div className="conteinerItemHistory">
         <p className="itemH">Name</p>
         <p className="itemH">Categoria</p>
