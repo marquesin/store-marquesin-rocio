@@ -61,6 +61,7 @@ function Product(props) {
       <div
         className="conteinerCard"
         key={props.producto._id}
+        onClick={handlerCanje}
         // onMouseOver={handlerHover}
         // onMouseOut={handlerHoverout}
         //mouseover/mouseout
@@ -74,7 +75,7 @@ function Product(props) {
         ></img>
         {userYPoint.points > props.producto.cost ? (
           <BuyBlue className="buyBlue" onClick={handlerCanje} />
-        ) : userYPoint !== [] && props.producto !== [] ? (
+        ) : userYPoint.points < props.producto.cost ? (
           <div className="needMoney">
             <p className="pNeed">
               You need {props.producto.cost - userYPoint.points}

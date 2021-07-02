@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Router } from "react-router-dom";
 import { useContext } from "react";
 import Header from "../Componentes/Header.js";
 import FiltrosDeProductos from "../Componentes/FiltrosDeProductos";
@@ -91,19 +90,17 @@ export default function Conteiner() {
         />
         <Api />
       </Route>
-      <Router basename="/store-marquesin-rocio">
-        <Route exact path="/history">
-          <History />
-          <PaginationHistory
-            productPerPagin={historyPerPagin}
-            totalProducts={history.length}
-            paginate={paginateH}
-            currentPage={currentPageH}
-            currentPost={currentPostH}
-            categoria={categoria}
-          />
-        </Route>
-      </Router>
+      <Route exact path="/history">
+        <History />
+        <PaginationHistory
+          productPerPagin={historyPerPagin}
+          totalProducts={history.length}
+          paginate={paginateH}
+          currentPage={currentPageH}
+          currentPost={currentPostH}
+          categoria={categoria}
+        />
+      </Route>
     </div>
   );
 }

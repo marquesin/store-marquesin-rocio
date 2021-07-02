@@ -29,7 +29,7 @@ export default function Header() {
         <div className="usuarioYMonedas">
           <p className="userName">{userYPoint?.name}</p>
           <div className="monedaMasPuntos">
-            {userYPoint?.points}
+            <p className="userPoint"> {userYPoint?.points}</p>
             <div className="moneda">
               <Coin />
             </div>
@@ -56,7 +56,7 @@ export default function Header() {
           ""
         )}
         <img src={imageHeader} alt={"imageHeader"} className="image-header" />
-        <h1 className="electronics">Electronicsuuuuu</h1>
+        <h1 className="electronics">Electronics</h1>
       </div>{" "}
     </div>
   );
