@@ -7,15 +7,15 @@ export default function PaginationHistory({
   totalProducts,
   paginate,
 }) {
-  const pageNumber = [];
+  const pageNumberh = [];
   for (let i = 1; i <= Math.ceil(totalProducts / productPerPagin); i++) {
-    pageNumber.push(i);
+    pageNumberh.push(i);
   }
 
   return (
     <div className="conteinerPaginationH">
       <div className="item-paginaH">
-        {pageNumber.map((numbers) => {
+        {pageNumberh.map((numbers) => {
           return (
             <button
               className="buttonNumberPage"

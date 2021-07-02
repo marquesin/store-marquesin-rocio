@@ -55,14 +55,16 @@ export default function Conteiner() {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentPageH, setCurrentPageH] = useState(1);
   const [productPerPagin] = useState(16);
-  const [historyPerPagin] = useState(1);
+  const [historyPerPagin] = useState(5);
 
   const indexOfLastPost = currentPage * productPerPagin;
   const indexOfFirstPost = indexOfLastPost - productPerPagin;
   const currentPost = nuevaLista.slice(indexOfFirstPost, indexOfLastPost);
+
   const currentPostH = history.slice(indexOfFirstPost, indexOfLastPost);
+
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  const paginateH = (pageNumber) => setCurrentPageH(pageNumber);
+  const paginateH = (pageNumberh) => setCurrentPageH(pageNumberh);
 
   return (
     <div>
@@ -94,11 +96,10 @@ export default function Conteiner() {
         <History />
         <PaginationHistory
           productPerPagin={historyPerPagin}
-          totalProducts={history.length}
+          totalProducts={history}
           paginate={paginateH}
           currentPage={currentPageH}
           currentPost={currentPostH}
-          categoria={categoria}
         />
       </Route>
     </div>
