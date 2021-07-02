@@ -26,8 +26,8 @@ color: rgba(97, 97, 97, 1);
     margin-top: 2%;
     display: flex;
     margin: auto;
-    /* flex-wrap: wrap;
-    margin-left: 30%; */
+     flex-wrap: wrap;
+     margin-left: 30%; 
 }
 .buttonNumberPage{
     background-color: #0AD4FA;
