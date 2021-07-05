@@ -69,7 +69,7 @@ export default function Conteiner() {
 
   const listH = ItemHistory();
   const currentPostH = listH.slice(indexOfFirstPostH, indexOfLastPostH);
-  console.log(currentPostH);
+  // console.log(currentPostH);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   const paginateH = (pageNumberh) => setCurrentPageH(pageNumberh);

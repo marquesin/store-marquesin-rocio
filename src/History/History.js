@@ -4,17 +4,19 @@ import { AppContext } from "../Context/AppContext";
 import { Link } from "react-router-dom";
 import "./PaginationHistory.css";
 import image from "./image/headera.png";
-// import Header from "../Componentes/Header";
+import { HeaderTop } from "../Componentes/Header";
 
 export default function History({ currentPostH }) {
+  const { userYPoint, agrearPuntos, setAgregarPuntos } = useContext(AppContext);
+
   return (
     <div className="conteinerHistory">
-      {/* <Header /> */}
-      <div className="conteinerHome">
-        <button className="Home">
-          <Link to="/">Return Home</Link>
-        </button>
-      </div>
+      <HeaderTop
+        userYPoint={userYPoint}
+        agrearPuntos={agrearPuntos}
+        setAgregarPuntos={setAgregarPuntos}
+      />
+      {/* <div className="conteinerHome"></div> */}
       <img src={image} alt={"image"} className="image" />
       <h1 className="electronics">History</h1>
       <div className="conteinerItemHistory">

@@ -11,50 +11,16 @@ import imageHeader from "./images/header.png";
 
 export default function Header() {
   const { userYPoint, agrearPuntos, setAgregarPuntos } = useContext(AppContext);
-  const [disparoPuntos, setDisparoPuntos] = useState(false);
-  const ManejarDisparoPuntos = () => {
-    setDisparoPuntos(!disparoPuntos);
-  };
+
   return (
     <div className="header">
-      <div className="conteiner-top-header">
-        <div className="iconHeader">
-          <IconHeader />
-        </div>
-        <div className="conteinerLink">
-          <button className="buttonHistory">
-            <Link to="/history">My history</Link>
-          </button>
-        </div>
-        <div className="usuarioYMonedas">
-          <p className="userName">{userYPoint?.name}</p>
-          <div className="monedaMasPuntos">
-            <p className="userPoint"> {userYPoint?.points}</p>
-            <div className="moneda">
-              <Coin />
-            </div>
-          </div>
-          <button
-            className="buttonPlus"
-            onClick={ManejarDisparoPuntos}
-            value={disparoPuntos}
-          >
-            {disparoPuntos ? <Minus /> : <Plus />}
-          </button>
-        </div>{" "}
-      </div>
+      <HeaderTop
+        userYPoint={userYPoint}
+        agrearPuntos={agrearPuntos}
+        setAgregarPuntos={setAgregarPuntos}
+      />
       <div className="conteiner-image-header">
         {" "}
-        {disparoPuntos ? (
-          <div className="conteinerAgregandoPuntos">
-            <AgregandoPuntos
-              agrearPuntos={agrearPuntos}
-              setAgregarPuntos={setAgregarPuntos}
-            />
-          </div>
-        ) : (
-          ""
-        )}
         <img src={imageHeader} alt={"imageHeader"} className="image-header" />
         <h1 className="electronics">Electronics</h1>
       </div>{" "}
@@ -95,6 +61,74 @@ function AgregandoPuntos() {
         btn3={btn3}
         setAgregarPuntos={setAgregarPuntos} */}
       {/* /> */}
+    </div>
+  );
+}
+
+export function HeaderTop(props) {
+  const [his, setHis] = useState(false);
+  const [disparoPuntos, setDisparoPuntos] = useState(false);
+  const ManejarDisparoPuntos = () => {
+    setDisparoPuntos(!disparoPuntos);
+  };
+  const ManejarbuttonHistory = (e) => {
+    setHis(!his);
+    // if (his === true) {
+    //   setHis(false);
+    // }
+  };
+  return (
+    <div className="conteiner-top-header">
+      <div className="iconHeader">
+        <IconHeader />
+      </div>
+      <div className="conteinerLink">
+        <button
+          className={his === "false" ? "buttonHistory" : "Home"}
+          // onClick={ManejarbuttonHistory}
+          // value={his}
+        >
+          {" "}
+          {his == false ? (
+            <Link to="/history" value={his} onClick={ManejarbuttonHistory}>
+              My history
+            </Link>
+          ) : (
+            <Link
+              to="/"
+              // value={his} onClick={ManejarbuttonHistory}
+            >
+              Return Home
+            </Link>
+          )}
+        </button>
+      </div>
+      <div className="usuarioYMonedas">
+        <p className="userName">{props.userYPoint?.name}</p>
+        <div className="monedaMasPuntos">
+          <p className="userPoint"> {props.userYPoint?.points}</p>
+          <div className="moneda">
+            <Coin />
+          </div>
+        </div>
+        <button
+          className="buttonPlus"
+          onClick={ManejarDisparoPuntos}
+          value={props.disparoPuntos}
+        >
+          {disparoPuntos ? <Minus /> : <Plus />}
+        </button>
+      </div>{" "}
+      {disparoPuntos ? (
+        <div className="conteinerAgregandoPuntos">
+          <AgregandoPuntos
+            agrearPuntos={props.agrearPuntos}
+            setAgregarPuntos={props.setAgregarPuntos}
+          />
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

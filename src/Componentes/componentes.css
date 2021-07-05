@@ -25,7 +25,7 @@ z-index: 50;
     display: flex;
   }
   .iconHeader{
-      margin: 1.5% 0 0 2%;
+      margin: 1.5% 0 0 1%;
   }
   .conteinerLink{
       margin: auto;
@@ -119,10 +119,11 @@ z-index: 50;
     width: 15%;
     height: 100px;
     z-index: 100;
-    margin-left: 80%;
+    margin-left: 82%;
     background-color: white;
     display: flex;
     margin-right: 5%;
+    margin-top: 5%;
 }
 .btn1000, .btn5000, .btn7500{
     background-color: #0AD4FA;
