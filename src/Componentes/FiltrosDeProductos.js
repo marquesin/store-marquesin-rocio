@@ -3,8 +3,6 @@ import React from "react";
 import { ProductosPorPagina } from "../Paginacion/Paginacion.js";
 import { ReactComponent as ArrowRight } from "./images/arrow-right.svg";
 import { ReactComponent as ArrowLeft } from "./images/arrow-left.svg";
-import { useContext, useState } from "react";
-import { AppContext } from "../Context/AppContext";
 
 export default function FiltrosDeProductos({
   currentPage,
@@ -15,8 +13,6 @@ export default function FiltrosDeProductos({
   orden,
   currentPost,
 }) {
-  const { productos } = useContext(AppContext);
-
   return (
     <div className="conteinerFiltrosYCantidad">
       <ProductosPorPagina
@@ -58,8 +54,6 @@ export default function FiltrosDeProductos({
             <option value="Drones">Drones</option>
             <option value="Phone Accessories">Phone Accessories</option>
           </select>
-          {/* <button className="lowest">Lowest price</button>
-          <button className="highest">Highest price</button> */}
         </div>
       </div>
       {currentPage === 1 ? (

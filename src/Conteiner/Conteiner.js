@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useContext } from "react";
 import Header from "../Componentes/Header.js";
-import { ButtonMiHistory } from "../Componentes/Header.js";
 import FiltrosDeProductos from "../Componentes/FiltrosDeProductos";
 import Productos from "../Componentes/Productos/Productos.js";
 import Api from "../Api/Api";
@@ -48,7 +47,7 @@ export default function Conteiner() {
 
   const nuevaLista = ordenados.filter((productos) => {
     if (categoria !== "categorias") {
-      return productos.category == categoria;
+      return productos.category === categoria;
     } else if (categoria === "categorias") {
       return productos;
     }
@@ -70,7 +69,6 @@ export default function Conteiner() {
 
   const listH = ItemHistory();
   const currentPostH = listH.slice(indexOfFirstPostH, indexOfLastPostH);
-  // console.log(currentPostH);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   const paginateH = (pageNumberh) => setCurrentPageH(pageNumberh);

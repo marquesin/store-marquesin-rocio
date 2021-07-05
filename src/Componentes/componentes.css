@@ -192,35 +192,6 @@ margin: auto;
 border-right: solid #D9D9D9 3px;
 }
 
-/* .conteinerFiltros{
-    display: flex;
-     
-}
-.conteinerSort{
-    height: 30px;
-    margin-top: 1%;
-}
-.sort{
-font-style: normal;
-font-weight: normal;
-font-size: 24px;
-letter-spacing: -0.15px;
-color: #A3A3A3;
-margin: auto;
-}
-.most, .lowest, .highest{
-    background-color: #0AD4FA;
-    border-radius: 20.5px;
-    border: none;
-    width :163px;
-    height :48px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 48px;
-    color:  rgba(255, 255, 255, 1);
-    margin-right: 3%;
-} */
 .fitros{
     width: 600px;
     height: 100%;
@@ -344,38 +315,6 @@ align-self: flex-end;
     color: #616161;
        
 }
-
-/* .hoverProduct{
-    width: 276px;
-    height: 276px;
-    background-color: black;
-    display: none;
-}
- .conteinerCard:hover{
-    /* visibility: hidden; */
-    /* z-index: 0; */
-/* }  */
-/* .conteinerCard:hover~.hoverProduct {
-    display: block;
-    z-index: 10;
-
-} */ 
-/* .hoverProduct:hover~.conteinerCard {
-    display: block;
-} */
-/* 
- .cobertorImage{
-background-color:180deg, rgba(10, 212, 250, 0.86 0%, rgba(37, 187, 241, 0.86) 100%);
-/* z-index: 2; */
-/* width: 276px;
-height: 276px;
-} */ 
- /* .imageHoverProduct{
-/* z-index: 1; */
-/* width: 276px; */
-
-
-/* }   */ 
 
 
 /* -----------------------------------------POPUP----------------------------- */

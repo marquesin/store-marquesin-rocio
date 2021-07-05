@@ -29,6 +29,7 @@ export default function Paginacion({
             <button
               className="buttonNumberPage"
               onClick={() => paginate(numbers)}
+              key={numbers}
             >
               {numbers}
             </button>

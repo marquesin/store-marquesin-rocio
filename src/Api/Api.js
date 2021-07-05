@@ -15,7 +15,6 @@ export default function Api() {
     setCompraIniciada,
     setLoading,
     setHistory,
-    compraFallida,
     setCompraFallida,
   } = useContext(AppContext);
   setLoading(true);
@@ -25,8 +24,6 @@ export default function Api() {
     Authorization:
       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk",
   };
-  // const BASE_URL = `https://private-77968-aerolabchallenge.apiary-proxy.com/`;
-
   //   -------------------Usuario y sus puntos actuales----------------------
   useEffect(() => {
     setLoading(true);
@@ -42,7 +39,7 @@ export default function Api() {
     setgetUserYPoints(false);
   }, [getUserYPoints, setUserYPoint]);
 
-  //1000, 5000 o 7500 puntos PUEDEN INGRESAR NO OTROS
+  //1000, 5000 o 7500 puntos PUEDEN INGRESAR, NO OTROS
   //   ------------------------------Productos---------------------------------------
   useEffect(() => {
     setLoading(true);
@@ -84,7 +81,7 @@ export default function Api() {
     }
   }, [agregarPuntos]);
 
-  // Para canjear productos:--------------------------------------------------
+  // ------------------------------Para canjear productos:--------------------------------------------------
   useEffect(() => {
     setLoading(true);
     if (idDeProductoPorCanjear !== "") {
@@ -142,9 +139,6 @@ export default function Api() {
         idDeProductoPorCanjear,
         setHistory,
         setCompraFallida)
-        // setTimeout(() => {
-        //   setLoading(false);
-        // }, 2000))
       }
     </>
   );

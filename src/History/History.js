@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AppContext } from "../Context/AppContext";
 import { Link } from "react-router-dom";
 import "./PaginationHistory.css";
-import image from "./image/headera.png";
+import ImageHeard from "./image/headera.png";
 import { HeaderTop } from "../Componentes/Header";
 
 export default function History({ currentPostH }, props) {
@@ -17,8 +17,7 @@ export default function History({ currentPostH }, props) {
         setAgregarPuntos={setAgregarPuntos}
         Button={ButtonReturnHome()}
       />
-      {/* <div className="conteinerHome"></div> */}
-      <img src={image} alt={"image"} className="image" />
+      <img src={ImageHeard} alt={"image"} className="image" />
       <h1 className="electronics">History</h1>
       <div className="conteinerItemHistory">
         <p className="itemH">Name</p>

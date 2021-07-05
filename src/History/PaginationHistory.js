@@ -26,7 +26,7 @@ export default function PaginationHistory({
               </button>
             </div>
           );
-        })}{" "}
+        })}
       </div>
     </div>
   );

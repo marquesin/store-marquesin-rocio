@@ -6,13 +6,12 @@ import { AppContext } from "../../Context/AppContext";
 import React from "react";
 
 export default function Productos(props) {
-  const { setIdDeProductoPorCanjear } = useContext(AppContext);
   return (
     <div className="conteinerProductos" key="conteinerProductos">
       {props.productos.map((producto) => {
         return (
           <>
-            <Product producto={producto}></Product>
+            <Product producto={producto} key={producto.name}></Product>
           </>
         );
       })}
