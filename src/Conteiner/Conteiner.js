@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useContext } from "react";
 import Header from "../Componentes/Header.js";
+import { ButtonMiHistory } from "../Componentes/Header.js";
 import FiltrosDeProductos from "../Componentes/FiltrosDeProductos";
 import Productos from "../Componentes/Productos/Productos.js";
 import Api from "../Api/Api";

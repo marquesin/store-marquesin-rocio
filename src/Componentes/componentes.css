@@ -271,6 +271,11 @@ box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 .conteinerCard:hover{
 cursor: pointer;
 background-color: rgba(217, 217, 217, 1);
+transform: translate(12px, 10%);
+transition: transform 3s;
+}
+.conteinerCard:not(:hover){
+    transition: transform 3s;
 }
 .imageProducto{
     border-bottom: solid 1px rgba(217, 217, 217, 1) ;

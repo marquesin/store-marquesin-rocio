@@ -6,7 +6,7 @@ import "./PaginationHistory.css";
 import image from "./image/headera.png";
 import { HeaderTop } from "../Componentes/Header";
 
-export default function History({ currentPostH }) {
+export default function History({ currentPostH }, props) {
   const { userYPoint, agrearPuntos, setAgregarPuntos } = useContext(AppContext);
 
   return (
@@ -15,6 +15,7 @@ export default function History({ currentPostH }) {
         userYPoint={userYPoint}
         agrearPuntos={agrearPuntos}
         setAgregarPuntos={setAgregarPuntos}
+        Button={ButtonReturnHome()}
       />
       {/* <div className="conteinerHome"></div> */}
       <img src={image} alt={"image"} className="image" />
@@ -50,3 +51,11 @@ let ItemHistory = () => {
   });
 };
 export { ItemHistory };
+
+export function ButtonReturnHome() {
+  return (
+    <button className="Home">
+      <Link to="/">Return Home</Link>
+    </button>
+  );
+}

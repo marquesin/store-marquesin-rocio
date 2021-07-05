@@ -15,6 +15,8 @@ export default function Api() {
     setCompraIniciada,
     setLoading,
     setHistory,
+    compraFallida,
+    setCompraFallida,
   } = useContext(AppContext);
   setLoading(true);
   const headers = {
@@ -36,9 +38,8 @@ export default function Api() {
       .then((usuario) => {
         return setUserYPoint(usuario);
       })
-      .catch((e) => console.log("error: " + e));
+      .catch((e) => console.log("Error: " + e));
     setgetUserYPoints(false);
-    // setLoading(false);
   }, [getUserYPoints, setUserYPoint]);
 
   //1000, 5000 o 7500 puntos PUEDEN INGRESAR NO OTROS
@@ -53,7 +54,7 @@ export default function Api() {
       .then((resultado) => {
         return setProductos(resultado);
       })
-      .catch((e) => console.log("error: " + e));
+      .catch((e) => console.log("Error: " + e));
   }, [setProductos, setUserYPoint, agregarPuntos, setAgregarPuntos]);
 
   //   ------------------------------Agregar Puntos-------------------------------
@@ -77,13 +78,13 @@ export default function Api() {
         .then((resultado) => {
           return resultado;
         })
-        .catch((e) => "Error: " + e);
+        .catch((e) => console.log("Error: " + e));
       setgetUserYPoints(true);
       setAgregarPuntos();
     }
   }, [agregarPuntos]);
 
-  // Para canjear productos:
+  // Para canjear productos:--------------------------------------------------
   useEffect(() => {
     setLoading(true);
     if (idDeProductoPorCanjear !== "") {
@@ -104,7 +105,7 @@ export default function Api() {
         .then((resultado) => {
           return resultado, setCompraIniciada(true);
         })
-        .catch((e) => "Error:" + e);
+        .catch((e) => console.log("Error:" + e) + setCompraFallida(true));
       setgetUserYPoints(true);
       setIdDeProductoPorCanjear("");
     }
@@ -127,7 +128,7 @@ export default function Api() {
         .then((resultado) => {
           return setHistory(resultado);
         })
-        .catch((e) => "Error:" + e);
+        .catch((e) => console.log("Error:" + e));
     }
   }, [setHistory]);
   setLoading(false);
@@ -139,7 +140,11 @@ export default function Api() {
         setProductos,
         agregarPuntos,
         idDeProductoPorCanjear,
-        setHistory)
+        setHistory,
+        setCompraFallida)
+        // setTimeout(() => {
+        //   setLoading(false);
+        // }, 2000))
       }
     </>
   );

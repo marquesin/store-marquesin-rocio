@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Plus } from "./images/plus-solid.svg";
 import { ReactComponent as Minus } from "./images/minus-solid.svg";
 import imageHeader from "./images/header.png";
-
-export default function Header() {
+import { Location } from "history";
+export default function Header(props) {
   const { userYPoint, agrearPuntos, setAgregarPuntos } = useContext(AppContext);
 
   return (
@@ -18,6 +18,7 @@ export default function Header() {
         userYPoint={userYPoint}
         agrearPuntos={agrearPuntos}
         setAgregarPuntos={setAgregarPuntos}
+        Button={ButtonMiHistory()}
       />
       <div className="conteiner-image-header">
         {" "}
@@ -66,43 +67,23 @@ function AgregandoPuntos() {
 }
 
 export function HeaderTop(props) {
-  const [his, setHis] = useState(false);
+  // const [his, setHis] = useState(false);
   const [disparoPuntos, setDisparoPuntos] = useState(false);
   const ManejarDisparoPuntos = () => {
     setDisparoPuntos(!disparoPuntos);
   };
-  const ManejarbuttonHistory = (e) => {
-    setHis(!his);
-    // if (his === true) {
-    //   setHis(false);
-    // }
-  };
+  // const ManejarbuttonHistory = (e) => {
+  //   setHis(!his);
+  //   // if (his === true) {
+  //   //   setHis(false);
+  //   // }
+  // };
   return (
     <div className="conteiner-top-header">
       <div className="iconHeader">
         <IconHeader />
       </div>
-      <div className="conteinerLink">
-        <button
-          className={his === "false" ? "buttonHistory" : "Home"}
-          // onClick={ManejarbuttonHistory}
-          // value={his}
-        >
-          {" "}
-          {his == false ? (
-            <Link to="/history" value={his} onClick={ManejarbuttonHistory}>
-              My history
-            </Link>
-          ) : (
-            <Link
-              to="/"
-              // value={his} onClick={ManejarbuttonHistory}
-            >
-              Return Home
-            </Link>
-          )}
-        </button>
-      </div>
+      <div className="conteinerLink">{props.Button}</div>
       <div className="usuarioYMonedas">
         <p className="userName">{props.userYPoint?.name}</p>
         <div className="monedaMasPuntos">
@@ -132,3 +113,21 @@ export function HeaderTop(props) {
     </div>
   );
 }
+export function ButtonMiHistory() {
+  return (
+    <button
+      className="buttonHistory"
+      // onClick={props.ManejarbuttonHistory}
+      // value={his}
+    >
+      {/* {Location.pathname === "/history" ? ( */}
+      {/* <Link to="/">Return Home</Link> */}
+      {/* ) : ( */}
+      <Link to="/history">My history</Link>
+      {/* ) */}
+      {/* } */}
+    </button>
+  );
+}
+
+// : "Home"}
