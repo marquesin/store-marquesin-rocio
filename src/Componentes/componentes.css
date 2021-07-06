@@ -90,14 +90,12 @@ z-index: 50;
       margin:15% 2% 2% 5% ;
   }
 .conteiner-image-header{
-    height: 480px;
     margin-top: 5%;
 }
 .electronics{
     height: 80px;
     width: 314px;
-    position: absolute;
-    top: 50%;
+    position:absolute;
     font-size: 64px;
     font-style: normal;
     font-weight: 700;
@@ -106,6 +104,7 @@ z-index: 50;
     text-align: left;
     color: #FFFFFF;
     margin-left:5% ;
+    top: 35%;
 
 }
 .conteinerButtonMonedas{
@@ -173,6 +172,7 @@ display: flex;
 align-content: center;
 margin: auto;
 justify-content: space-around;
+margin-top: 5%;
 }
 .conteinerCantidad{
     margin-bottom: auto;
@@ -230,6 +230,7 @@ border-right: solid #D9D9D9 3px;
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
+    margin-top: 3%;
 
 }
 .conteinerCard{

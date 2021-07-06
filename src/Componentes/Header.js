@@ -9,26 +9,28 @@ import { ReactComponent as Plus } from "./images/plus-solid.svg";
 import { ReactComponent as Minus } from "./images/minus-solid.svg";
 import imageHeader from "./images/header.png";
 export default function Header() {
-  const { userYPoint, agrearPuntos, setAgregarPuntos } = useContext(AppContext);
+  const { userYPoint, agregarPuntos, setAgregarPuntos } =
+    useContext(AppContext);
 
   return (
     <div className="header">
       <HeaderTop
         userYPoint={userYPoint}
-        agrearPuntos={agrearPuntos}
+        agregarPuntos={agregarPuntos}
         setAgregarPuntos={setAgregarPuntos}
         Button={ButtonMiHistory()}
+        AgregandoPuntos={AgregandoPuntos()}
       />
       <div className="conteiner-image-header">
-        <img src={imageHeader} alt={"imageHeader"} className="image-header" />
         <h1 className="electronics">Electronics</h1>
+        <img src={imageHeader} alt={"imageHeader"} className="image-header" />
       </div>
     </div>
   );
 }
 
-function AgregandoPuntos() {
-  const { setAgregarPuntos, agrearPuntos } = useContext(AppContext);
+export function AgregandoPuntos() {
+  const { setAgregarPuntos, agregarPuntos } = useContext(AppContext);
   const handlerBotton1 = () => {
     setAgregarPuntos(1000);
   };
@@ -40,14 +42,25 @@ function AgregandoPuntos() {
   };
   return (
     <div className="conteinerButtonMonedas">
-      {agrearPuntos}
-      <button className="btn1000" onClick={handlerBotton1} value={agrearPuntos}>
+      <button
+        className="btn1000"
+        onClick={handlerBotton1}
+        value={agregarPuntos}
+      >
         Agregar 1000
       </button>
-      <button className="btn5000" onClick={handlerBotton2} value={agrearPuntos}>
+      <button
+        className="btn5000"
+        onClick={handlerBotton2}
+        value={agregarPuntos}
+      >
         Agregar 5000
       </button>
-      <button className="btn7500" onClick={handlerBotton3} value={agrearPuntos}>
+      <button
+        className="btn7500"
+        onClick={handlerBotton3}
+        value={agregarPuntos}
+      >
         Agregar 7500
       </button>
     </div>
@@ -76,18 +89,13 @@ export function HeaderTop(props) {
         <button
           className="buttonPlus"
           onClick={ManejarDisparoPuntos}
-          value={props.disparoPuntos}
+          value={disparoPuntos}
         >
           {disparoPuntos ? <Minus /> : <Plus />}
         </button>
       </div>{" "}
       {disparoPuntos ? (
-        <div className="conteinerAgregandoPuntos">
-          <AgregandoPuntos
-            agrearPuntos={props.agrearPuntos}
-            setAgregarPuntos={props.setAgregarPuntos}
-          />
-        </div>
+        <div className="conteinerAgregandoPuntos">{props.AgregandoPuntos}</div>
       ) : (
         ""
       )}

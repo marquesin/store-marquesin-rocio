@@ -67,7 +67,7 @@ export default function Conteiner() {
 
   const currentPost = nuevaLista.slice(indexOfFirstPost, indexOfLastPost);
 
-  const listH = ItemHistory();
+  const listH = ItemHistory().reverse();
   const currentPostH = listH.slice(indexOfFirstPostH, indexOfLastPostH);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -86,7 +86,7 @@ export default function Conteiner() {
           manejarOrden={manejarOrden}
           currentPost={currentPost}
         />
-        <Loading></Loading>
+        <Loading />
         <CompraExitosaPopUp></CompraExitosaPopUp>
         <Productos productos={currentPost} />
         <Pagination
@@ -100,12 +100,14 @@ export default function Conteiner() {
         <Api />
       </Route>
       <Route exact path="/history">
+        <Api />
         <History currentPostH={currentPostH} />
         <PaginationHistory
           historyPerPagin={historyPerPagin}
           totalProducts={history.length}
           paginateH={paginateH}
         />
+        <Loading />
       </Route>
     </div>
   );

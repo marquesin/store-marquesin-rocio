@@ -17,7 +17,6 @@ export default function Api() {
     setHistory,
     setCompraFallida,
   } = useContext(AppContext);
-  setLoading(true);
   const headers = {
     "Content-Type": "application/json",
     Acept: "application/json",
@@ -33,7 +32,7 @@ export default function Api() {
     })
       .then((response) => response.json(response))
       .then((usuario) => {
-        return setUserYPoint(usuario);
+        return setUserYPoint(usuario), setLoading(false);
       })
       .catch((e) => console.log("Error: " + e));
     setgetUserYPoints(false);
@@ -42,7 +41,6 @@ export default function Api() {
   //1000, 5000 o 7500 puntos PUEDEN INGRESAR, NO OTROS
   //   ------------------------------Productos---------------------------------------
   useEffect(() => {
-    setLoading(true);
     fetch(`https://coding-challenge-api.aerolab.co/products`, {
       method: "GET",
       headers,
@@ -56,7 +54,6 @@ export default function Api() {
 
   //   ------------------------------Agregar Puntos-------------------------------
   useEffect(() => {
-    setLoading(true);
     if (agregarPuntos > 0) {
       setLoading(true);
       fetch(`https://coding-challenge-api.aerolab.co/user/points`, {
@@ -123,12 +120,11 @@ export default function Api() {
       })
         .then((response) => response.json(response))
         .then((resultado) => {
-          return setHistory(resultado);
+          return setHistory(resultado), setLoading(false);
         })
         .catch((e) => console.log("Error:" + e));
     }
   }, [setHistory]);
-  setLoading(false);
   return (
     <>
       {
