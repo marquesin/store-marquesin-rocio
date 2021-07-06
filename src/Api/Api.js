@@ -80,7 +80,6 @@ export default function Api() {
 
   // ------------------------------Para canjear productos:--------------------------------------------------
   useEffect(() => {
-    setLoading(true);
     if (idDeProductoPorCanjear !== "") {
       setLoading(true);
       fetch(`https://coding-challenge-api.aerolab.co/redeem`, {
