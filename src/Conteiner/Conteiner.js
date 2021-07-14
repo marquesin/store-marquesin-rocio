@@ -74,7 +74,7 @@ export default function Conteiner() {
   const paginateH = (pageNumberh) => setCurrentPageH(pageNumberh);
 
   return (
-    <div>
+    <main>
       <Route exact path="/">
         <Header />
         <FiltrosDeProductos
@@ -109,6 +109,6 @@ export default function Conteiner() {
         />
         <Loading />
       </Route>
-    </div>
+    </main>
   );
 }

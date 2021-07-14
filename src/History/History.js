@@ -12,7 +12,7 @@ export default function History({ currentPostH }, props) {
     useContext(AppContext);
 
   return (
-    <div className="conteinerHistory">
+    <main className="conteinerHistory">
       <HeaderTop
         userYPoint={userYPoint}
         agregarPuntos={agregarPuntos}
@@ -35,14 +35,14 @@ export default function History({ currentPostH }, props) {
       <button className="Home">
         <Link to="/">Return Home</Link>
       </button>
-    </div>
+    </main>
   );
 }
 let ItemHistory = () => {
   const { history } = useContext(AppContext);
   return history.map((history) => {
     return (
-      <div className="conteinerItemHistory">
+      <section className="conteinerItemHistory">
         <p className="resultH"> {history["name"]}</p>
         <p className="resultH"> {history["category"]}</p>
         <p className="resultH">{history["cost"]}</p>
@@ -50,7 +50,7 @@ let ItemHistory = () => {
         <p className="resultH">
           {history["productId"]}, ID product: {history["_id"]}
         </p>
-      </div>
+      </section>
     );
   });
 };

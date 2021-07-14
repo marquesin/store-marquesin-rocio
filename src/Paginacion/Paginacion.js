@@ -17,7 +17,7 @@ export default function Paginacion({
   }
 
   return (
-    <div className="conteinerPagination">
+    <footer className="conteinerPagination">
       <ProductosPorPagina
         currentPage={currentPage}
         categoria={categoria}
@@ -47,7 +47,7 @@ export default function Paginacion({
       ) : (
         ""
       )}
-    </div>
+    </footer>
   );
 }
 export function ProductosPorPagina(props) {

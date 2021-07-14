@@ -10,7 +10,7 @@ export default function CompraExitosaPopUp() {
     useContext(AppContext);
   return (
     <div>
-      {compraIniciada === true ? (
+      {compraIniciada ? (
         <div className="conteinerPopUp">
           <button className="buttonX" onClick={() => setCompraIniciada(false)}>
             X

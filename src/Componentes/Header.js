@@ -13,7 +13,7 @@ export default function Header() {
     useContext(AppContext);
 
   return (
-    <div className="header">
+    <header className="header">
       <HeaderTop
         userYPoint={userYPoint}
         agregarPuntos={agregarPuntos}
@@ -25,7 +25,7 @@ export default function Header() {
         <h1 className="electronics">Electronics</h1>
         <img src={imageHeader} alt={"imageHeader"} className="image-header" />
       </div>
-    </div>
+    </header>
   );
 }
 
@@ -73,7 +73,7 @@ export function HeaderTop(props) {
     setDisparoPuntos(!disparoPuntos);
   };
   return (
-    <div className="conteiner-top-header">
+    <nav className="conteiner-top-header">
       <div className="iconHeader">
         <IconHeader />
       </div>
@@ -99,7 +99,7 @@ export function HeaderTop(props) {
       ) : (
         ""
       )}
-    </div>
+    </nav>
   );
 }
 export function ButtonMiHistory() {

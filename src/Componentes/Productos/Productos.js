@@ -7,7 +7,7 @@ import React from "react";
 
 export default function Productos(props) {
   return (
-    <div className="conteinerProductos" key="conteinerProductos">
+    <section className="conteinerProductos" key="conteinerProductos">
       {props.productos.map((producto) => {
         return (
           <>
@@ -15,7 +15,7 @@ export default function Productos(props) {
           </>
         );
       })}
-    </div>
+    </section>
   );
 }
 function Product(props) {
