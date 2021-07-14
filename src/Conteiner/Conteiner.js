@@ -4,7 +4,7 @@ import Header from "../Componentes/Header/Header.js";
 import FiltrosDeProductos from "../Componentes/FiltrosDeProductos/FiltrosDeProductos";
 import Productos from "../Componentes/Productos/Productos.js";
 import Api from "../Api/Api";
-import Pagination from "../Paginacion/Paginacion.js";
+import Paginacion from "../Pagination/Paginacion.js";
 import { AppContext } from "../Context/AppContext.jsx";
 import CompraExitosaPopUp from "../Componentes/CompraExitosa/CompraExitosaPopUp.js";
 import Loading from "../Componentes/Cargando/Loading.js";
@@ -82,7 +82,7 @@ export default function Conteiner() {
         <Loading />
         <CompraExitosaPopUp></CompraExitosaPopUp>
         <Productos productos={currentPost} />
-        <Pagination
+        <Paginacion
           productPerPagin={productPerPagin}
           totalProducts={productos.length}
           paginate={paginate}

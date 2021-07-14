@@ -1,6 +1,6 @@
 import "./FiltroDeProductos.css";
 import React from "react";
-import { ProductosPorPagina } from "../../Paginacion/Paginacion.js";
+import { ProductosPorPagina } from "../../Pagination/Paginacion.js";
 import { ReactComponent as ArrowRight } from "../images/arrow-right.svg";
 import { ReactComponent as ArrowLeft } from "../images/arrow-left.svg";
 

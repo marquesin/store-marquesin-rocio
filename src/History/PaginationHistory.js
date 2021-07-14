@@ -1,6 +1,6 @@
 import React from "react";
 import "./PaginationHistory.css";
-import "../Paginacion/Paginacion.css";
+import "../Pagination/Paginacion.css";
 
 export default function PaginationHistory({
   historyPerPagin,
