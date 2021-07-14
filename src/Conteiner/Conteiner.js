@@ -14,7 +14,7 @@ import PaginationHistory from "../History/PaginationHistory.js";
 import { ItemHistory } from "../History/History";
 
 export default function Conteiner() {
-  const { productos, history } = useContext(AppContext);
+  const { productos, history,currentPage, setCurrentPage,productPerPagin,currentPageH, setCurrentPageH,historyPerPagin } = useContext(AppContext);
 
   const [categoria, setCategoria] = useState("categorias");
   const [orden, setOden] = useState("Sort by:");
@@ -52,13 +52,6 @@ export default function Conteiner() {
       return productos;
     }
   });
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const [productPerPagin] = useState(16);
-
-  const [currentPageH, setCurrentPageH] = useState(1);
-  const [historyPerPagin] = useState(30);
-
   const indexOfLastPost = currentPage * productPerPagin;
   const indexOfFirstPost = indexOfLastPost - productPerPagin;
 
