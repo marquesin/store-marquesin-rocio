@@ -1,9 +1,9 @@
 import React from "react";
-
-import { AppContext } from "../Context/AppContext";
+import "./CompraExitosa.css"
+import { AppContext } from "../../Context/AppContext";
 import { useContext } from "react";
-import { ReactComponent as Check } from "../Componentes/images/check-solid.svg";
-import { ReactComponent as Cross } from "./Productos/images/Icons/times-circle-solid.svg";
+import { ReactComponent as Check } from "../images/check-solid.svg";
+import { ReactComponent as Cross } from "../Productos/images/Icons/times-circle-solid.svg";
 
 export default function CompraExitosaPopUp() {
   const { compraIniciada, setCompraIniciada, compraFallida, setCompraFallida } =

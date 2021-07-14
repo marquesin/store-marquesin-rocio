@@ -1,3 +1,4 @@
+import "./Productos.css"
 import { ReactComponent as BuyBlue } from "./images/Icons/buy-blue.svg";
 import { ReactComponent as Coin } from "./images/Icons/coin.svg";
 import { useContext } from "react";

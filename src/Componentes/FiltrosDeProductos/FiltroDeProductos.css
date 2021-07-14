@@ -1,0 +1,68 @@
+/* -----------------FILTROS----------------- */
+
+.conteinerFiltrosYCantidad {
+    height: 5vw;
+    border-bottom: solid #D9D9D9;
+    ;
+    width: 1176px;
+    display: flex;
+    align-content: center;
+    margin: auto;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+.conteinerCantidad {
+    margin-bottom: auto;
+    padding-right: 2%;
+
+
+}
+
+.cantidadProductDisponible {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: -0.15000003576278687px;
+    text-align: left;
+    color: rgba(97, 97, 97, 1);
+    margin: auto;
+    border-right: solid #D9D9D9 3px;
+}
+
+.fitros {
+    width: 600px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10%;
+
+}
+
+#OrdenarPor,
+#Categoria {
+    width: 200px;
+    height: 50px;
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #0AD4FA;
+    color: white;
+    border: none;
+}
+
+#OrdenarPor:hover,
+#Categoria:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #0AD4FA;
+}
+
+.arrow-top {
+    margin-left: 10%;
+}
+
+.arrow-top:hover {
+    cursor: pointer;
+}

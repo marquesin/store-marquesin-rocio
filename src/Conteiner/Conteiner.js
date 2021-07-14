@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useContext } from "react";
-import Header from "../Componentes/Header.js";
-import FiltrosDeProductos from "../Componentes/FiltrosDeProductos";
+import Header from "../Componentes/Header/Header.js";
+import FiltrosDeProductos from "../Componentes/FiltrosDeProductos/FiltrosDeProductos";
 import Productos from "../Componentes/Productos/Productos.js";
 import Api from "../Api/Api";
 import Pagination from "../Paginacion/Paginacion.js";
 import { AppContext } from "../Context/AppContext.jsx";
-import CompraExitosaPopUp from "../Componentes/CompraExitosaPopUp.js";
-import Loading from "../Componentes/Loading.js";
+import CompraExitosaPopUp from "../Componentes/CompraExitosa/CompraExitosaPopUp.js";
+import Loading from "../Componentes/Cargando/Loading.js";
 import { Route } from "react-router-dom";
 import History from "../History/History.js";
 import PaginationHistory from "../History/PaginationHistory.js";

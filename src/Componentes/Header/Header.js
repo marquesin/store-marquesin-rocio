@@ -1,13 +1,13 @@
-import "./componentes.css";
+import "./Header.css";
 import React from "react";
-import { ReactComponent as IconHeader } from "./images/logo.svg";
-import { ReactComponent as Coin } from "./images/coin.svg";
+import { ReactComponent as IconHeader } from "../images/logo.svg";
+import { ReactComponent as Coin } from "../images/coin.svg";
 import { useContext, useState } from "react";
-import { AppContext } from "../Context/AppContext";
+import { AppContext } from "../../Context/AppContext";
 import { Link } from "react-router-dom";
-import { ReactComponent as Plus } from "./images/plus-solid.svg";
-import { ReactComponent as Minus } from "./images/minus-solid.svg";
-import imageHeader from "./images/header.png";
+import { ReactComponent as Plus } from "../images/plus-solid.svg";
+import { ReactComponent as Minus } from "../images/minus-solid.svg";
+import imageHeader from "../images/header.png";
 export default function Header() {
   const { userYPoint, agregarPuntos, setAgregarPuntos } =
     useContext(AppContext);

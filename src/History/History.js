@@ -4,8 +4,8 @@ import { AppContext } from "../Context/AppContext";
 import { Link } from "react-router-dom";
 import "./PaginationHistory.css";
 import ImageHeard from "./image/headera.png";
-import { HeaderTop } from "../Componentes/Header";
-import { AgregandoPuntos } from "../Componentes/Header.js";
+import { HeaderTop } from "../Componentes/Header/Header.js";
+import { AgregandoPuntos } from "../Componentes/Header/Header.js";
 
 export default function History({ currentPostH }, props) {
   const { userYPoint, agregarPuntos, setAgregarPuntos } =

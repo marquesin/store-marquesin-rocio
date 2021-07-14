@@ -1,0 +1,6 @@
+/* ------------------------------Loading-------------------------- */
+.conteinerLoading {
+    position: fixed;
+    z-index: 30;
+    top: 50%;
+}

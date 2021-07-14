@@ -1,0 +1,186 @@
+/* ---------------HEADER------------------ */
+.conteiner-top-header {
+    position: fixed;
+    height: 90px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    z-index: 50;
+}
+
+.image-header {
+    width: 100%;
+
+}
+
+.usuarioYMonedas {
+    display: flex;
+}
+
+.iconHeader {
+    margin: 1.5% 0 0 1%;
+}
+
+.conteinerLink {
+    margin: auto;
+    margin-left: 60%;
+
+}
+
+.buttonHistory {
+    width: 120px;
+    height: 50px;
+    background-color: #0AD4FA;
+    border: none;
+}
+
+.buttonHistory:hover {
+    cursor: pointer;
+    background-color: white;
+    border: solid 1px #0AD4FA;
+    color: #0AD4FA;
+
+}
+
+.buttonHistory a {
+    text-decoration: none;
+    font-size: 23px;
+    color: white;
+}
+
+.buttonHistory a:hover {
+    cursor: pointer;
+    color: #0AD4FA;
+}
+
+.usuarioYMonedas {
+    margin: 1% 3% 0 0;
+}
+
+.monedaMasPuntos {
+    height: 48px;
+    width: 170px;
+    border-radius: 20.5px;
+    background: #EDEDED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(97, 97, 97, 1);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: -0.15000003576278687px;
+    text-align: left;
+}
+
+.userName {
+    margin: 3% 5% 2% 0;
+    height: 105px;
+    width: 150px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.15000003576278687px;
+    color: rgba(97, 97, 97, 1);
+}
+
+.userPoint {
+    margin-left: 10%;
+}
+
+.moneda {
+    margin: 15% 2% 2% 5%;
+}
+
+.conteiner-image-header {
+    margin-top: 5%;
+}
+
+.electronics {
+    height: 80px;
+    width: 314px;
+    position: absolute;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #FFFFFF;
+    margin-left: 5%;
+    top: 35%;
+
+}
+
+.conteinerButtonMonedas {
+    display: flex;
+    align-items: center;
+    width: 25%;
+    margin-right: auto;
+}
+
+.conteinerAgregandoPuntos {
+    position: fixed;
+    width: 15%;
+    height: 100px;
+    z-index: 100;
+    margin-left: 82%;
+    background-color: white;
+    display: flex;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+.btn1000,
+.btn5000,
+.btn7500 {
+    background-color: #0AD4FA;
+    border-radius: 20.5px;
+    border: none;
+    color: rgba(255, 255, 255, 1);
+    width: 100px;
+    height: 50px;
+    margin-left: 35%;
+    font-size: 12px;
+}
+
+.btn1000:hover,
+.btn5000:hover,
+.btn7500:hover {
+    cursor: pointer;
+    background-color: #FFFFFF;
+    color: #0AD4FA;
+    border: solid 2px #0AD4FA;
+
+}
+
+.buttonPlus {
+    margin-top: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    box-sizing: content-box;
+}
+
+.buttonPlus:hover {
+    background-color: #0AD4FA;
+}
+
+.buttonPlus .svg-inline--fa {
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+
+.buttonPlus .svg-inline--fa:hover {
+    color: white;
+}
+
+/* --------------------------------------- */

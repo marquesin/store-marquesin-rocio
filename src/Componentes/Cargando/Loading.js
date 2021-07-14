@@ -1,7 +1,8 @@
 import React from "react";
-import { AppContext } from "../Context/AppContext";
+import "./Loading.css"
+import { AppContext } from "../../Context/AppContext";
 import { useContext } from "react";
-import { ReactComponent as LoadingIcon } from "../Componentes/images/loading.svg";
+import { ReactComponent as LoadingIcon } from "../images/loading.svg";
 
 export default function Loading() {
   const { loading } = useContext(AppContext);

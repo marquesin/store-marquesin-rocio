@@ -1,0 +1,62 @@
+/* -----------------------------------------POPUP----------------------------- */
+
+.conteinerPopUp {
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    top: 30%;
+    left: 20%;
+    background-color: white;
+    z-index: 30;
+    border-radius: 20px;
+    border: #0AD4FA 3px solid;
+
+}
+
+.buttonX {
+    margin-left: 95%;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: none;
+    background-color: #0AD4FA;
+    color: white;
+}
+
+.compraRealizadaText {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.15000003576278687px;
+    color: rgba(97, 97, 97, 1);
+    margin-top: 5%;
+}
+
+.svg-inline--fa {
+    width: 50px;
+    height: 50px;
+    color: #0AD4FA;
+    border: solid 0.5px #0AD4FA;
+    border-radius: 50%;
+}
+
+.continuarComprando {
+    margin-top: 5%;
+    width: 250px;
+    height: 70px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.15000003576278687px;
+    color: white;
+    background-color: #0AD4FA;
+    border: none
+}
+
+.buttonX:hover,
+.continuarComprando:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #0AD4FA;
+    border: solid 2px #0AD4FA;
+}
