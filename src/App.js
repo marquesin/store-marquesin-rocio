@@ -1,5 +1,5 @@
 import "./index.css";
-import Container from "./Conteiner/Conteiner.js";
+import Container from "./Container/Container.js";
 import { AppProvider } from "./Context/AppContext.jsx";
 
 function App() {

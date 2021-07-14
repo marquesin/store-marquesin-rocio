@@ -13,7 +13,7 @@ import History from "../History/History.js";
 import PaginationHistory from "../History/PaginationHistory.js";
 import { ItemHistory } from "../History/History";
 
-export default function Conteiner() {
+export default function Container() {
   const { productos, history,currentPage, setCurrentPage,productPerPagin,currentPageH, setCurrentPageH,historyPerPagin } = useContext(AppContext);
 
   const [categoria, setCategoria] = useState("categorias");
